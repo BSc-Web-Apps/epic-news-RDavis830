@@ -17,7 +17,9 @@ export default function App() {
 			<div className="flex h-screen flex-col justify-between">
 				<div className="flex-1 bg-slate-100">
 					<main className="grid h-full place-items-center">
-						<h1 className="text-mega">"Hello there!"</h1>
+						<h1 className="container w-auto rounded-md bg-red-600 text-center text-mega">
+							"Hello there!"
+						</h1>
 						<p className="text-gray-600 md:text-lg lg:text-xl">
 							{' '}
 							Welcome to the Nnews website. Here you will find the latest news
