@@ -25,7 +25,7 @@ export default function App() {
 				<HeaderWithSearch />
 				<div className="flex-1">
 					<main className="grid h-full place-items-center">
-						<h1 className="text-mega">Welcome to Epic News!</h1>
+						<h1 className="text-mega">Welcome to the Nnews!</h1>
 					</main>
 				</div>
 
