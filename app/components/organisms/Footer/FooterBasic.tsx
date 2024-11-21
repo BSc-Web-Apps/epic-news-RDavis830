@@ -7,7 +7,7 @@ export interface FooterProps {
 }
 
 const FooterBasic = ({
-	companyName = 'Nnews Ltd',
+	companyName = 'News Ltd',
 	altText = 'Our company logo',
 }: FooterProps) => {
 	return (
