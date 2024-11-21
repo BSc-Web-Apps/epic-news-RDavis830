@@ -47,6 +47,17 @@ export default function App() {
 								</div>
 							</HeroCallToAction>
 						</div>
+						<div className="mb-3 flex w-11/12 space-x-1">
+							<div className="w-4/5 rounded-md bg-gray-200 drop-shadow-md"></div>
+							<div className=" h-auto w-1/5 flex-col rounded-md bg-gray-200 drop-shadow-md"></div>
+							<div className="h-96 w-1/5 rounded-md bg-gray-200 drop-shadow-md"></div>
+						</div>
+						<div className="flex flex-row">
+							<div className="h-48 w-1/5 rounded-md bg-gray-200 drop-shadow-md"></div>
+							<div className="h-48 w-1/5 rounded-md bg-gray-200 drop-shadow-md"></div>
+							<div className="h-48 w-1/5 rounded-md bg-gray-200 drop-shadow-md"></div>
+							<div className="h-48 w-1/5 rounded-md bg-gray-200 drop-shadow-md"></div>
+						</div>
 					</main>
 				</div>
 
