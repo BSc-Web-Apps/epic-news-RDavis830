@@ -1,5 +1,7 @@
 import { type MetaFunction } from '@remix-run/node'
 import { Link } from '@remix-run/react'
+import StoriesGridBot from '#app/components/molecules/StoriesGridBottom.tsx'
+import StoriesGridMid from '#app/components/molecules/StoryGridMiddle.tsx'
 import HeroCallToAction from '#app/components/organisms/Hero/HeroCallToAction.tsx'
 import { Button } from '#app/components/ui/button.tsx'
 
@@ -32,56 +34,9 @@ export default function Index() {
 					</div>
 				</HeroCallToAction>
 			</div>
-			<div className="mb-3 flex w-11/12 space-x-1">
-				<div className="w-4/5 rounded-md bg-gray-200 drop-shadow-md dark:bg-white">
-					<Link to="/">
-						<h1 className="text-3xl font-bold hover:underline hover:drop-shadow-md dark:text-gray-800">
-							BIG NEWS!
-						</h1>
-					</Link>
-				</div>
-				<div className="h-auto w-1/5 flex-col rounded-md bg-gray-200 drop-shadow-md dark:bg-white">
-					<Link to="/">
-						<h2 className="hover:drop-shadow-md dark:text-gray-800">
-							News story
-						</h2>
-					</Link>
-					<p className="dark:text-gray-800">Info</p>
-				</div>
-				<div className="h-96 w-1/5 rounded-md bg-gray-200 drop-shadow-md dark:bg-white">
-					<Link to="/">
-						<h2 className="hover:drop-shadow-md dark:text-gray-800">
-							News story
-						</h2>
-					</Link>
-					<p className="dark:text-gray-800">Info</p>
-				</div>
-			</div>
-			<div className="flex w-11/12 flex-row space-x-1">
-				<div className="h-48 w-2/5 rounded-md bg-gray-200 text-right drop-shadow-md dark:bg-white">
-					<Link to="/">
-						<h2 className="m-2 hover:drop-shadow-md dark:text-gray-800">
-							News story
-						</h2>
-					</Link>
-					<p className="m-2 dark:text-gray-800">More info</p>
-				</div>
-				<div className="h-48 w-2/5 rounded-md bg-gray-200 text-right drop-shadow-md dark:bg-white">
-					<Link to="/">
-						<h2 className="m-2 hover:drop-shadow-md dark:text-gray-800">
-							News story
-						</h2>
-					</Link>
-					<p className="m-2 dark:text-gray-800">More info</p>
-				</div>
-				<div className="h-48 w-2/5 rounded-md bg-gray-200 text-right drop-shadow-md dark:bg-white">
-					<Link to="/">
-						<h2 className="m-2 hover:drop-shadow-md dark:text-gray-800">
-							News story
-						</h2>
-					</Link>
-					<p className="m-2 dark:text-gray-800">More info</p>
-				</div>
+			<div className="flex flex-col gap-4">
+				<StoriesGridMid />
+				<StoriesGridBot />
 			</div>
 		</main>
 	)

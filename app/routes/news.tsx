@@ -10,7 +10,7 @@ export default function NewsPage() {
 						to="business"
 						prefetch="intent"
 						className={({ isActive }) =>
-							`${isActive ? 'text-blue-300 underline underline-offset-8' : 'text-blue-500'}`
+							`${isActive ? 'rounded bg-red-600 p-1 font-bold text-white underline drop-shadow-md' : 'rounded bg-red-600 p-1 font-semibold text-white'}`
 						}
 					>
 						Business
@@ -19,7 +19,7 @@ export default function NewsPage() {
 						to="sport"
 						prefetch="intent"
 						className={({ isActive }) =>
-							`${isActive ? 'text-blue-300 underline underline-offset-8' : 'text-blue-500'}`
+							`${isActive ? 'rounded bg-red-600 p-1 font-bold text-white underline drop-shadow-md' : 'rounded bg-red-600 p-1 font-semibold text-white'}`
 						}
 					>
 						Sport
@@ -28,7 +28,7 @@ export default function NewsPage() {
 						to="weather"
 						prefetch="intent"
 						className={({ isActive }) =>
-							`${isActive ? 'text-blue-300 underline underline-offset-8' : 'text-blue-500'}`
+							`${isActive ? 'rounded bg-red-600 p-1 font-bold text-white underline drop-shadow-md' : 'rounded bg-red-600 p-1 font-semibold text-white'}`
 						}
 					>
 						Weather
@@ -37,7 +37,7 @@ export default function NewsPage() {
 						to="tech"
 						prefetch="intent"
 						className={({ isActive }) =>
-							`${isActive ? 'text-blue-300 underline underline-offset-8' : 'text-blue-500'}`
+							`${isActive ? 'rounded bg-red-600 p-1 font-bold text-white underline drop-shadow-md' : 'rounded bg-red-600 p-1 font-semibold text-white'}`
 						}
 					>
 						Tech

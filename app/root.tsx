@@ -30,9 +30,9 @@ export default function App() {
 					<Outlet />
 				</div>
 
-				<div className="container flex justify-between pb-5">
+				{/* <div className="container flex justify-between pb-5">
 					<ThemeSwitch userPreference={data.requestInfo.userPrefs.theme} />
-				</div>
+				</div> */}
 				<Footer />
 			</div>
 		</Document>
