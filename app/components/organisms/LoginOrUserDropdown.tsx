@@ -11,7 +11,12 @@ export default function () {
 			{user ? (
 				<UserDropdown />
 			) : (
-				<Button asChild variant="default" size="lg">
+				<Button
+					asChild
+					variant="default"
+					size="lg"
+					className=" bg-white text-gray-800"
+				>
 					<Link to="/login">Log In</Link>
 				</Button>
 			)}

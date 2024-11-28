@@ -1,5 +1,5 @@
 import { type LinksFunction } from '@remix-run/node'
-import { Link, useLoaderData } from '@remix-run/react'
+import { Link, Outlet, useLoaderData } from '@remix-run/react'
 import Document from '~/components/shared-layout/Document.tsx'
 import ThemeSwitch from '~/components/shared-layout/ThemeSwitch'
 import { useNonce } from '~/utils/nonce-provider.ts'
@@ -26,39 +26,8 @@ export default function App() {
 		<Document nonce={nonce} theme={theme}>
 			<div className="flex h-screen flex-col justify-between">
 				<HeaderWithSearch />
-				<div className="flex-1">
-					<main className="grid h-full place-items-center">
-						<div className="w-full py-16">
-							<HeroCallToAction
-								image="app\assets\jpg\portrait-01.jpg"
-								imageRight={true}
-								hasBackgroundColour={true}
-							>
-								<div className="flex h-full flex-1 flex-col justify-between p-16">
-									<div className="flex flex-col gap-8">
-										<h2 className="text-h2">Welcome to News!</h2>
-										<p className="text-lg">
-											Your no.1 spot for all tech news and more.
-										</p>
-									</div>
-									<Button asChild variant="default" size="lg">
-										<Link to="/signup">Sign up</Link>
-									</Button>
-								</div>
-							</HeroCallToAction>
-						</div>
-						<div className="mb-3 flex w-11/12 space-x-1">
-							<div className="w-4/5 rounded-md bg-gray-200 drop-shadow-md"></div>
-							<div className=" h-auto w-1/5 flex-col rounded-md bg-gray-200 drop-shadow-md"></div>
-							<div className="h-96 w-1/5 rounded-md bg-gray-200 drop-shadow-md"></div>
-						</div>
-						<div className="flex flex-row">
-							<div className="h-48 w-1/5 rounded-md bg-gray-200 drop-shadow-md"></div>
-							<div className="h-48 w-1/5 rounded-md bg-gray-200 drop-shadow-md"></div>
-							<div className="h-48 w-1/5 rounded-md bg-gray-200 drop-shadow-md"></div>
-							<div className="h-48 w-1/5 rounded-md bg-gray-200 drop-shadow-md"></div>
-						</div>
-					</main>
+				<div className="flex-1 dark:bg-gray-200">
+					<Outlet />
 				</div>
 
 				<div className="container flex justify-between pb-5">
