@@ -13,7 +13,7 @@ export default function HeaderWithSearch() {
 			<header className="mb-1 bg-primary/10 bg-red-600 py-6">
 				<nav className="container flex flex-wrap items-center justify-between gap-4 sm:flex-nowrap md:gap-8">
 					<Link to="/">
-						<div className="bg-white hover:bg-gray-200">
+						<div className=" hover:bg-gray-200">
 							<img src={logo} alt="News Logo" className="flex max-w-28" />
 						</div>
 					</Link>
