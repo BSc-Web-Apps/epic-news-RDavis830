@@ -2,7 +2,7 @@ import { Link } from '@remix-run/react'
 
 export default function StoriesGridMid() {
 	return (
-		<div className="container grid grid-cols-6 gap-4 space-x-1">
+		<div className="container grid grid-cols-6 gap-4">
 			<Link
 				to="/"
 				className="col-span-4 rounded-md bg-gray-200 drop-shadow-md hover:underline hover:drop-shadow-md dark:bg-white"
