@@ -1,11 +1,25 @@
 import { type MetaFunction } from '@remix-run/node'
-import { Link } from '@remix-run/react'
-import StoriesGridBot from '#app/components/molecules/StoriesGridBottom.tsx'
-import StoriesGridMid from '#app/components/molecules/StoryGridMiddle.tsx'
-import HeroCallToAction from '#app/components/organisms/Hero/HeroCallToAction.tsx'
-import { Button } from '#app/components/ui/button.tsx'
+import { json, Link, useLoaderData } from '@remix-run/react'
+import heroImage from '~/assets/jpg/sample-hero.jpg'
+import { Button } from '~/components/atoms/Button.tsx'
+import ArticleCard from '~/components/organisms/ArticleCard.tsx'
+import HeroCallToAction from '~/components/organisms/Hero/HeroCallToAction.tsx'
+import { prisma } from '~/utils/db.server.ts'
 
 export const meta: MetaFunction = () => [{ title: 'Epic News' }]
+
+export async function loader() {
+	const allArticles = await prisma.article.findMany({
+		select: {
+			id: true,
+			title: true,
+			category: { select: { name: true } },
+			images: { select: { id: true } },
+		},
+	})
+
+	return json({ allArticles })
+}
 
 export default function Index() {
 	return (
@@ -37,6 +51,24 @@ export default function Index() {
 			<div className="flex flex-col gap-4">
 				<StoriesGridMid />
 				<StoriesGridBot />
+			</div>
+			<div className="container py-16">
+				<h2 className="mb-8 text-h2 font-normal">Latest news</h2>
+
+				<div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
+					{allArticles.length > 0 ? (
+						allArticles.map(article => (
+							<ArticleCard
+								key={article.id}
+								title={article.title}
+								category={article.category?.name}
+								imageId={article.images[0]?.id}
+							/>
+						))
+					) : (
+						<p>No articles found</p>
+					)}
+				</div>
 			</div>
 		</main>
 	)
