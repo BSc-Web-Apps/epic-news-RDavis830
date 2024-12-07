@@ -52,9 +52,9 @@ export function SearchBar({
 				<StatusButton
 					type="submit"
 					status={isSubmitting ? 'pending' : status}
-					className="flex w-full items-center justify-center"
+					className="flex w-full items-center justify-center bg-white"
 				>
-					<Icon name="magnifying-glass" size="md" />
+					<Icon name="magnifying-glass" size="md" color="black" />
 					<span className="sr-only">Search</span>
 				</StatusButton>
 			</div>
