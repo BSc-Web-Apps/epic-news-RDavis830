@@ -15,7 +15,6 @@ import {
 } from '@remix-run/react'
 import { formatDistanceToNow } from 'date-fns'
 import { z } from 'zod'
-import { GeneralErrorBoundary } from '~/components/ErrorBoundary.js'
 import { floatingToolbarClassName } from '~/components/floating-toolbar.tsx'
 import { ErrorList } from '~/components/forms.tsx'
 import { Button } from '~/components/ui/button.tsx'
@@ -28,6 +27,7 @@ import { requireUserWithPermission } from '~/utils/permissions.server.ts'
 import { redirectWithToast } from '~/utils/toast.server.ts'
 import { userHasPermission, useOptionalUser } from '~/utils/user.ts'
 import { type loader as articlesLoader } from './articles.tsx'
+import { GeneralErrorBoundary } from '~/components/ErrorBoundary.js'
 
 export async function loader({ params }: LoaderFunctionArgs) {
 	const article = await prisma.article.findUnique({
