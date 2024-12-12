@@ -10,6 +10,7 @@ import { getArticleImgSrc } from '~/utils/misc.tsx'
 
 interface ArticleCardProps {
 	articleId: string
+	index: number
 	title: string
 	category?: string
 	imageId?: string
@@ -17,11 +18,13 @@ interface ArticleCardProps {
 
 export default function ArticleCard({
 	articleId,
+	index,
 	title,
 	category = 'General news',
 	imageId,
 }: ArticleCardProps) {
 	const imageSrc = imageId ? getArticleImgSrc(imageId) : siteLogo
+	const isMainArticle = index === 0
 
 	const categoryIcons: { [key: string]: JSX.Element } = {
 		Business: <MdOutlineBusinessCenter size={20} className="text-white" />,
@@ -31,7 +34,10 @@ export default function ArticleCard({
 	}
 
 	return (
-		<Link to={`/article/${articleId}`}>
+		<Link
+			to={`/article/${articleId}`}
+			className={`${isMainArticle ? 'col-span-2' : ''}`}
+		>
 			<div className="cursor-pointer decoration-white transition-all duration-500 hover:scale-105">
 				<div>
 					<img

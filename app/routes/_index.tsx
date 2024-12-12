@@ -5,7 +5,7 @@ import { Button } from '~/components/atoms/Button.tsx'
 import HeroCallToAction from '~/components/organisms/Hero/HeroCallToAction.tsx'
 import { prisma } from '~/utils/db.server.ts'
 
-export const meta: MetaFunction = () => [{ title: 'Epic News' }]
+export const meta: MetaFunction = () => [{ title: 'News' }]
 
 export async function loader() {
 	const allArticles = await prisma.article.findMany({
@@ -16,8 +16,10 @@ export async function loader() {
 			category: { select: { name: true } },
 			images: { select: { id: true } },
 		},
+		orderBy: {
+			createdAt: 'desc', // Sorts by createdAt in descending order (most recent first)
+		},
 	})
-
 	return json({ allArticles })
 }
 
@@ -51,12 +53,12 @@ export default function Index() {
 			</div>
 			<div className="container py-16">
 				<h2 className="mb-8 text-h2 font-bold ">Latest news</h2>
-				<div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
-					'
+				<div className="grid grid-cols-2 grid-rows-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
 					{allArticles.length > 0 ? (
-						allArticles.map(article => (
+						allArticles.map((article, index) => (
 							<ArticleCard
 								key={article.id}
+								index={index}
 								articleId={article.id}
 								title={article.title}
 								category={article.category?.name}
