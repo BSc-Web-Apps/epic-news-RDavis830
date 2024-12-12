@@ -64,12 +64,16 @@ async function seed() {
 	const techCategory = await prisma.articleCategory.create({
 		data: { name: 'Technology', slug: 'technology' },
 	})
-	const entertainmentCategory = await prisma.articleCategory.create({
-		data: { name: 'Entertainment', slug: 'entertainment' },
+	const sportCategory = await prisma.articleCategory.create({
+		data: { name: 'Sport', slug: 'Sport' },
 	})
 	const businessCategory = await prisma.articleCategory.create({
 		data: { name: 'Business', slug: 'business' },
 	})
+	const weatherCategory = await prisma.articleCategory.create({
+		data: { name: 'Weather', slug: 'weather' },
+	})
+
 	console.timeEnd('📝 Created article categories...')
 
 	const totalUsers = 5
@@ -78,8 +82,9 @@ async function seed() {
 	const userImages = await getUserImages()
 	const articleCategories = [
 		techCategory,
-		entertainmentCategory,
+		sportCategory,
 		businessCategory,
+		weatherCategory,
 	]
 
 	for (let index = 0; index < totalUsers; index++) {

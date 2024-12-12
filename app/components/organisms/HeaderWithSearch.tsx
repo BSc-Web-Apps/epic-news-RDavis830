@@ -56,7 +56,7 @@ export default function HeaderWithSearch({
 				<div className=" px-5 hover:bg-red-700">
 					<div className="px-5 hover:bg-red-700 hover:underline">
 						<NavLink
-							to="sport"
+							to="/news/Sport"
 							prefetch="intent"
 							className={({ isActive }) =>
 								`${isActive ? 'bg-red-700 px-5 text-2xl font-semibold text-muted-foreground text-white underline' : 'text-2xl font-semibold text-muted-foreground text-white transition hover:drop-shadow-md'}`
@@ -68,7 +68,7 @@ export default function HeaderWithSearch({
 				</div>
 				<div className="px-5 hover:bg-red-700 hover:underline">
 					<NavLink
-						to="weather"
+						to="/news/weather"
 						prefetch="intent"
 						className={({ isActive }) =>
 							`${isActive ? 'bg-red-700 px-5 text-2xl font-semibold text-muted-foreground text-white underline' : 'text-2xl font-semibold text-muted-foreground text-white transition hover:drop-shadow-md'}`

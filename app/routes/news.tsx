@@ -16,7 +16,7 @@ export default function NewsPage() {
 						Business
 					</NavLink>
 					<NavLink
-						to="sport"
+						to="/news/Sport"
 						prefetch="intent"
 						className={({ isActive }) =>
 							`${isActive ? 'rounded bg-red-600 p-1 font-bold text-white underline drop-shadow-md' : 'rounded bg-red-600 p-1 font-semibold text-white'}`
@@ -25,7 +25,7 @@ export default function NewsPage() {
 						Sport
 					</NavLink>
 					<NavLink
-						to="weather"
+						to="/news/weather"
 						prefetch="intent"
 						className={({ isActive }) =>
 							`${isActive ? 'rounded bg-red-600 p-1 font-bold text-white underline drop-shadow-md' : 'rounded bg-red-600 p-1 font-semibold text-white'}`

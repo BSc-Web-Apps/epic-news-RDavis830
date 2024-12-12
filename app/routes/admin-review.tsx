@@ -35,8 +35,8 @@ export default function ArticlesRoute() {
 	const navLinkDefaultClassName =
 		'line-clamp-2 block rounded-l-full py-2 pl-8 pr-6 text-base lg:text-xl'
 	return (
-		<main className="container flex h-full min-h-[750px] px-0 py-12 md:px-8">
-			<div className="grid w-full grid-cols-4 bg-muted pl-2 md:container md:rounded-3xl md:pr-0">
+		<main className="container flex h-full min-h-[750px] px-0 py-12 md:px-8 ">
+			<div className="grid w-full grid-cols-4 bg-gray-200 bg-muted pl-2 md:container md:rounded-3xl md:pr-0">
 				<div className="relative col-span-1">
 					<div className="absolute inset-0 flex flex-col">
 						<ul className="overflow-y-auto overflow-x-hidden py-12">

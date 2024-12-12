@@ -46,7 +46,7 @@ const FooterBasic = ({
 				</div>
 				<div>
 					<Link
-						to="/sign-up"
+						to="/signup"
 						className="text-sm font-semibold text-muted-foreground text-white transition hover:drop-shadow-md"
 					>
 						Sign Up

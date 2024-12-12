@@ -14,14 +14,14 @@ export default function AdminReviewRoute() {
 	const data = useLoaderData<typeof loader>()
 
 	return (
-		<div className="absolute inset-0 flex flex-col px-10">
+		<div className="absolute inset-0 flex flex-col bg-gray-200 px-10">
 			<h2 className="mb-2 pt-12 text-h2 lg:mb-6">{data.article.title}</h2>
 			<div className="mb-4 flex  justify-between gap-4">
 				<p className="w-fit rounded-lg bg-card px-4 py-2 text-sm text-card-foreground">
 					{data.article.category?.name ?? 'General News'}
 				</p>
 				<p
-					className={`w-fit rounded-lg ${data.article.isPublished ? 'bg-green-800' : 'bg-destructive'} px-4 py-2 text-xs font-bold text-card-foreground`}
+					className={`w-fit rounded-lg ${data.article.isPublished ? 'bg-green-800' : 'bg-destructive'} px-4 py-2 text-xs font-bold text-card-foreground text-white`}
 				>
 					{data.article.isPublished ? 'Published' : 'Awaiting review'}
 				</p>

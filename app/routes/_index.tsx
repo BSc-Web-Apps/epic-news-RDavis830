@@ -50,7 +50,7 @@ export default function Index() {
 				</HeroCallToAction>
 			</div>
 			<div className="container py-16">
-				<h2 className="mb-8 text-h2 font-normal">Latest news</h2>
+				<h2 className="mb-8 text-h2 font-bold ">Latest news</h2>
 				<div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
 					'
 					{allArticles.length > 0 ? (
