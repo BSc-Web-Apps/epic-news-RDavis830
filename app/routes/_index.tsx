@@ -1,7 +1,5 @@
 import { type MetaFunction } from '@remix-run/node'
 import { json, Link, useLoaderData } from '@remix-run/react'
-import StoriesGridBot from '#app/components/molecules/StoriesGridBottom.tsx'
-import StoriesGridMid from '#app/components/molecules/StoryGridMiddle.tsx'
 import ArticleCard from '#app/components/organisms/ArticleCard.tsx'
 import { Button } from '~/components/atoms/Button.tsx'
 import HeroCallToAction from '~/components/organisms/Hero/HeroCallToAction.tsx'
@@ -11,6 +9,7 @@ export const meta: MetaFunction = () => [{ title: 'Epic News' }]
 
 export async function loader() {
 	const allArticles = await prisma.article.findMany({
+		where: { isPublished: true },
 		select: {
 			id: true,
 			title: true,
@@ -49,10 +48,6 @@ export default function Index() {
 						</Button>
 					</div>
 				</HeroCallToAction>
-			</div>
-			<div className="flex flex-col gap-4">
-				<StoriesGridMid />
-				<StoriesGridBot />
 			</div>
 			<div className="container py-16">
 				<h2 className="mb-8 text-h2 font-normal">Latest news</h2>

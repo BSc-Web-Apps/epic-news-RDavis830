@@ -7,7 +7,7 @@ export default function NewsPage() {
 				<h1 className="text-h1">News</h1>
 				<div className="flex space-x-4 py-4">
 					<NavLink
-						to="business"
+						to="/news/business"
 						prefetch="intent"
 						className={({ isActive }) =>
 							`${isActive ? 'rounded bg-red-600 p-1 font-bold text-white underline drop-shadow-md' : 'rounded bg-red-600 p-1 font-semibold text-white'}`
@@ -34,7 +34,7 @@ export default function NewsPage() {
 						Weather
 					</NavLink>
 					<NavLink
-						to="tech"
+						to="/news/technology"
 						prefetch="intent"
 						className={({ isActive }) =>
 							`${isActive ? 'rounded bg-red-600 p-1 font-bold text-white underline drop-shadow-md' : 'rounded bg-red-600 p-1 font-semibold text-white'}`

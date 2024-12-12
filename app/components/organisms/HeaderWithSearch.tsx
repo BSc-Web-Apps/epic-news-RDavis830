@@ -3,7 +3,12 @@ import logo from '~/assets/png/Logo.png'
 import { SearchBar } from '../molecules/SearchBar'
 import LoginOrUserDropdown from './LoginOrUserDropdown'
 
-export default function HeaderWithSearch() {
+interface HeaderWithSearchProps {
+	isAdminUser: boolean
+}
+export default function HeaderWithSearch({
+	isAdminUser,
+}: HeaderWithSearchProps) {
 	const matches = useMatches()
 	const isOnSearchPage = matches.find(m => m.id === 'routes/users+/index')
 	const searchBar = isOnSearchPage ? null : <SearchBar status="idle" />
@@ -17,6 +22,16 @@ export default function HeaderWithSearch() {
 							<img src={logo} alt="News Logo" className="flex max-w-28" />
 						</div>
 					</Link>
+					<div className="flex flex-1 items-center justify-end gap-8">
+						{isAdminUser && (
+							<Link
+								to="/admin-review"
+								className="rounded-lg bg-white px-4 py-2 text-sm font-semibold hover:bg-gray-300 hover:underline"
+							>
+								Admin Review
+							</Link>
+						)}
+					</div>
 					<div className="ml-auto hidden max-w-sm flex-1 sm:block">
 						{searchBar}
 					</div>
@@ -29,7 +44,7 @@ export default function HeaderWithSearch() {
 			<div className="flex w-full flex-row justify-center space-x-28 bg-red-600">
 				<div className="px-5 hover:bg-red-700 hover:underline">
 					<NavLink
-						to="business"
+						to="/news/business"
 						prefetch="intent"
 						className={({ isActive }) =>
 							`${isActive ? 'bg-red-700 px-5 text-2xl font-semibold text-muted-foreground text-white underline' : 'text-2xl font-semibold text-muted-foreground text-white transition hover:drop-shadow-md'}`
@@ -64,7 +79,7 @@ export default function HeaderWithSearch() {
 				</div>
 				<div className="px-5 hover:bg-red-700 hover:underline">
 					<NavLink
-						to="tech"
+						to="/news/technology"
 						prefetch="intent"
 						className={({ isActive }) =>
 							`${isActive ? 'bg-red-700 px-5 text-2xl font-semibold text-muted-foreground text-white underline' : 'text-2xl font-semibold text-muted-foreground text-white transition hover:drop-shadow-md'}`
