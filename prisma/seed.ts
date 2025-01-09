@@ -20,7 +20,7 @@ async function seed() {
 	console.timeEnd('🧹 Cleaned up the database...')
 
 	console.time('🔑 Created permissions...')
-	const entities = ['user', 'note']
+	const entities = ['user', 'note', 'article']
 	const actions = ['create', 'read', 'update', 'delete']
 	const accesses = ['own', 'any'] as const
 
@@ -60,10 +60,32 @@ async function seed() {
 	})
 	console.timeEnd('👑 Created roles...')
 
+	console.time('📝 Created article categories...')
+	const techCategory = await prisma.articleCategory.create({
+		data: { name: 'Technology', slug: 'technology' },
+	})
+	const sportCategory = await prisma.articleCategory.create({
+		data: { name: 'Sport', slug: 'Sport' },
+	})
+	const businessCategory = await prisma.articleCategory.create({
+		data: { name: 'Business', slug: 'business' },
+	})
+	const weatherCategory = await prisma.articleCategory.create({
+		data: { name: 'Weather', slug: 'weather' },
+	})
+
+	console.timeEnd('📝 Created article categories...')
+
 	const totalUsers = 5
 	console.time(`👤 Created ${totalUsers} users...`)
 	const noteImages = await getNoteImages()
 	const userImages = await getUserImages()
+	const articleCategories = [
+		techCategory,
+		sportCategory,
+		businessCategory,
+		weatherCategory,
+	]
 
 	for (let index = 0; index < totalUsers; index++) {
 		const userData = createUser()
@@ -81,6 +103,24 @@ async function seed() {
 						}).map(() => ({
 							title: faker.lorem.sentence(),
 							content: faker.lorem.paragraphs(),
+							images: {
+								create: Array.from({
+									length: faker.number.int({ min: 1, max: 3 }),
+								}).map(() => {
+									const imgNumber = faker.number.int({ min: 0, max: 9 })
+									return noteImages[imgNumber]
+								}),
+							},
+						})),
+					},
+					articles: {
+						create: Array.from({
+							length: faker.number.int({ min: 1, max: 3 }),
+						}).map(() => ({
+							title: faker.lorem.sentence(),
+							content: faker.lorem.paragraphs(),
+							categoryId:
+								articleCategories[faker.number.int({ min: 0, max: 2 })].id,
 							images: {
 								create: Array.from({
 									length: faker.number.int({ min: 1, max: 3 }),
