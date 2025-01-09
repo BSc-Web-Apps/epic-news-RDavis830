@@ -42,47 +42,47 @@ export default function HeaderWithSearch({
 				</nav>
 			</header>
 			<div className="flex w-full flex-row justify-center space-x-28 bg-red-600">
-				<div className="px-5 hover:bg-red-700 hover:underline">
+				<div className="hover:bg-red-700 hover:underline lg:px-5">
 					<NavLink
 						to="/news/business"
 						prefetch="intent"
 						className={({ isActive }) =>
-							`${isActive ? 'bg-red-700 px-5 text-2xl font-semibold text-muted-foreground text-white underline' : 'text-2xl font-semibold text-muted-foreground text-white transition hover:drop-shadow-md'}`
+							`${isActive ? 'bg-red-700 font-semibold text-muted-foreground text-white underline lg:px-5 lg:text-2xl' : 'font-semibold text-muted-foreground text-white transition hover:drop-shadow-md lg:text-2xl'}`
 						}
 					>
 						Business
 					</NavLink>
 				</div>
-				<div className=" px-5 hover:bg-red-700">
-					<div className="px-5 hover:bg-red-700 hover:underline">
+				<div className="hover:bg-red-700 lg:px-5">
+					<div className="hover:bg-red-700 hover:underline lg:px-5">
 						<NavLink
 							to="/news/Sport"
 							prefetch="intent"
 							className={({ isActive }) =>
-								`${isActive ? 'bg-red-700 px-5 text-2xl font-semibold text-muted-foreground text-white underline' : 'text-2xl font-semibold text-muted-foreground text-white transition hover:drop-shadow-md'}`
+								`${isActive ? 'bg-red-700 font-semibold text-muted-foreground text-white underline lg:px-5 lg:text-2xl' : 'font-semibold text-muted-foreground text-white transition hover:drop-shadow-md lg:text-2xl'}`
 							}
 						>
 							Sport
 						</NavLink>
 					</div>
 				</div>
-				<div className="px-5 hover:bg-red-700 hover:underline">
+				<div className="hover:bg-red-700 hover:underline lg:px-5">
 					<NavLink
 						to="/news/weather"
 						prefetch="intent"
 						className={({ isActive }) =>
-							`${isActive ? 'bg-red-700 px-5 text-2xl font-semibold text-muted-foreground text-white underline' : 'text-2xl font-semibold text-muted-foreground text-white transition hover:drop-shadow-md'}`
+							`${isActive ? 'bg-red-700 font-semibold text-muted-foreground text-white underline lg:px-5 lg:text-2xl' : 'font-semibold text-muted-foreground text-white transition hover:drop-shadow-md lg:text-2xl'}`
 						}
 					>
 						Weather
 					</NavLink>
 				</div>
-				<div className="px-5 hover:bg-red-700 hover:underline">
+				<div className="hover:bg-red-700 hover:underline lg:px-5">
 					<NavLink
 						to="/news/technology"
 						prefetch="intent"
 						className={({ isActive }) =>
-							`${isActive ? 'bg-red-700 px-5 text-2xl font-semibold text-muted-foreground text-white underline' : 'text-2xl font-semibold text-muted-foreground text-white transition hover:drop-shadow-md'}`
+							`${isActive ? 'bg-red-700 font-semibold text-muted-foreground text-white underline lg:px-5 lg:text-2xl' : 'font-semibold text-muted-foreground text-white transition hover:drop-shadow-md lg:text-2xl'}`
 						}
 					>
 						Tech

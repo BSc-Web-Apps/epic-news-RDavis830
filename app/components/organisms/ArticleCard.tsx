@@ -36,7 +36,7 @@ export default function ArticleCard({
 	return (
 		<Link
 			to={`/article/${articleId}`}
-			className={`${isMainArticle ? 'col-span-2' : ''}`}
+			className={`${isMainArticle ? 'col-span-2' : 'col-span-2 md:col-span-1 lg:col-span-1'}`}
 		>
 			<div className="cursor-pointer decoration-white transition-all duration-500 hover:scale-105">
 				<div>

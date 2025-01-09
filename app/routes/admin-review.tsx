@@ -37,7 +37,7 @@ export default function ArticlesRoute() {
 	return (
 		<main className="container flex h-full min-h-[750px] px-0 py-12 md:px-8 ">
 			<div className="grid w-full grid-cols-4 bg-gray-200 bg-muted pl-2 md:container md:rounded-3xl md:pr-0">
-				<div className="relative col-span-1">
+				<div className="relative col-span-4 md:col-span-1 lg:col-span-1">
 					<div className="absolute inset-0 flex flex-col">
 						<ul className="overflow-y-auto overflow-x-hidden py-12">
 							{allArticles.map(article => (
@@ -64,7 +64,7 @@ export default function ArticlesRoute() {
 						</ul>
 					</div>
 				</div>
-				<div className="relative col-span-3 bg-accent md:rounded-r-3xl">
+				<div className="relative col-span-4 bg-accent md:col-span-3 md:rounded-r-3xl lg:col-span-3">
 					<Outlet />
 				</div>
 			</div>

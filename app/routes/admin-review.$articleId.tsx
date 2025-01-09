@@ -15,9 +15,11 @@ export default function AdminReviewRoute() {
 
 	return (
 		<div className="absolute inset-0 flex flex-col bg-gray-200 px-10">
-			<h2 className="mb-2 pt-12 text-h2 lg:mb-6">{data.article.title}</h2>
-			<div className="mb-4 flex  justify-between gap-4">
-				<p className="w-fit rounded-lg bg-card px-4 py-2 text-sm text-card-foreground">
+			<h2 className="mb-2 text-xl font-bold text-gray-800 lg:mb-6 lg:pt-12 lg:text-h2">
+				{data.article.title}
+			</h2>
+			<div className="mb-4 flex gap-4 lg:justify-between">
+				<p className="w-fit rounded-lg bg-card px-4 py-2 text-xs text-card-foreground lg:text-sm">
 					{data.article.category?.name ?? 'General News'}
 				</p>
 				<p

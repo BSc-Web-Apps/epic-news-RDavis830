@@ -17,7 +17,7 @@ export async function loader() {
 			images: { select: { id: true } },
 		},
 		orderBy: {
-			createdAt: 'desc', // Sorts by createdAt in descending order (most recent first)
+			publishedAt: 'desc', // Sorts by createdAt in descending order (most recent first)
 		},
 	})
 	return json({ allArticles })
@@ -33,11 +33,22 @@ export default function Index() {
 					imageRight={true}
 					hasBackgroundColour={true}
 				>
-					<div className="flex h-full flex-1 flex-col justify-between bg-gray-200 p-16 text-gray-800 dark:bg-white">
-						<div className="flex flex-col gap-8">
-							<h2 className="text-h2">Welcome to News!</h2>
-							<p className="text-lg">
+					<div className="flex h-full flex-1 flex-col justify-center gap-8 bg-gray-200 p-16 text-gray-800 dark:bg-white ">
+						<div className="lg:pt-10flex flex-col items-center">
+							<h2 className=" text-center text-4xl font-bold text-gray-800 lg:text-h2">
+								Welcome to News!
+							</h2>
+							<h1 className="pt-2 text-center text-lg font-bold text-gray-800">
 								Your no.1 spot for all tech news and more.
+							</h1>
+							<p className="pt-3 text-center text-sm text-gray-800 lg:text-base">
+								Stay informed with the latest updates and in-depth stories by
+								signing up for our news website. Get real-time news coverage and
+								expert analysis. Whether you're interested in breaking news,
+								politics, business, entertainment, or Technology, we’ve got you
+								covered. Don’t miss out on important stories—join our community
+								today for reliable, timely, and comprehensive news at your
+								fingertips.
 							</p>
 						</div>
 						<Button
@@ -51,6 +62,7 @@ export default function Index() {
 					</div>
 				</HeroCallToAction>
 			</div>
+			<div className="h-1 w-4/5 bg-red-600"></div>
 			<div className="container py-16">
 				<h2 className="mb-8 text-h2 font-bold ">Latest news</h2>
 				<div className="grid grid-cols-2 grid-rows-2 gap-6 md:grid-cols-3 lg:grid-cols-4">

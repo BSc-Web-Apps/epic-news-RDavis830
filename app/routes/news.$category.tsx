@@ -35,7 +35,7 @@ export default function NewsCategoryPage() {
 	return (
 		<div className="container py-16">
 			<h2 className="text-h2 text-gray-800 dark:text-white">{categoryTitle}</h2>
-			<div className="my-4 grid grid-cols-5 gap-6">
+			<div className="my-4 grid grid-cols-2 gap-6 lg:grid-cols-5">
 				{filteredArticles.map(article => {
 					return (
 						<ArticleCard
@@ -48,7 +48,7 @@ export default function NewsCategoryPage() {
 					)
 				})}
 			</div>
-			<div className="grid grid-cols-5 gap-6"></div>
+			<div className="grid grid-cols-2 gap-6 lg:grid-cols-5"></div>
 		</div>
 	)
 }

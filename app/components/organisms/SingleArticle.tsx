@@ -27,10 +27,6 @@ interface SingleArticleProps {
 	}
 }
 
-const WireframeBlock = () => {
-	return <div className="h-full w-full bg-slate-500" />
-}
-
 export default function SingleArticle({ article }: SingleArticleProps) {
 	const mainImage = article.images[0]
 	const imageSrc = article.images.length
@@ -61,7 +57,7 @@ export default function SingleArticle({ article }: SingleArticleProps) {
 				</div>
 
 				<div>
-					<div className="float-left lg:w-2/3 lg:pb-8 lg:pr-12">
+					<div className="lg:float-left lg:w-2/3 lg:pb-8 lg:pr-12">
 						<div
 							className={`relative h-[18rem] object-cover md:h-[23rem] lg:col-span-3 lg:h-[28rem]`}
 						>
