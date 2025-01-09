@@ -26,6 +26,11 @@ interface SingleArticleProps {
 		}[]
 	}
 }
+
+const WireframeBlock = () => {
+	return <div className="h-full w-full bg-slate-500" />
+}
+
 export default function SingleArticle({ article }: SingleArticleProps) {
 	const mainImage = article.images[0]
 	const imageSrc = article.images.length
@@ -43,38 +48,44 @@ export default function SingleArticle({ article }: SingleArticleProps) {
 
 	return (
 		<div className="container py-16">
-			<div className="lg:w-2/3">
-				<Link
-					to="/news"
-					className="group flex items-center gap-2 pb-4 text-muted-foreground transition hover:text-foreground"
-				>
-					<FiArrowLeft className="transition group-hover:-translate-x-1" /> Back
-					to News
-				</Link>
-				<h2 className="pb-8 text-h2">{article.title}</h2>
+			<div className="">
+				<div className="">
+					<Link
+						to="/news"
+						className="group flex items-center gap-2 text-muted-foreground transition hover:text-foreground"
+					>
+						<FiArrowLeft className="transition group-hover:-translate-x-1" />{' '}
+						Back to News
+					</Link>
+					<h2 className="pb-8 text-left text-h2">{article.title}</h2>
+				</div>
 
-				<div
-					className={`relative h-[18rem] object-cover md:h-[23rem] lg:h-[28rem]`}
-				>
-					<div className="absolute inset-0">
-						<img
-							className="h-full w-full rounded-t-lg object-cover"
-							src={imageSrc}
-							alt={article.title}
-						/>
+				<div>
+					<div className="float-left lg:w-2/3 lg:pb-8 lg:pr-12">
+						<div
+							className={`relative h-[18rem] object-cover md:h-[23rem] lg:col-span-3 lg:h-[28rem]`}
+						>
+							<div className="absolute inset-0">
+								<img
+									className="h-full w-full rounded-t-lg object-cover"
+									src={imageSrc}
+									alt={article.title}
+								/>
+							</div>
+						</div>
+						<div className="flex justify-between gap-4 pt-4">
+							<div className="flex items-center gap-2 text-gray-800">
+								{categoryIcons[categoryTitle]}
+								<p className="text-sm">{categoryTitle}</p>
+							</div>
+							<span className="text-sm text-muted-foreground">
+								By: {article.owner.name}
+							</span>
+						</div>
 					</div>
-				</div>
-				<div className="flex justify-between gap-4 pt-4">
-					<div className="flex items-center gap-2 text-gray-800">
-						{categoryIcons[categoryTitle]}
-						<p className="text-sm">{categoryTitle}</p>
+					<div className="whitespace-break-spaces pt-16 text-lg leading-loose">
+						{article.content}
 					</div>
-					<span className="text-sm text-muted-foreground">
-						By: {article.owner.name}
-					</span>
-				</div>
-				<div className="whitespace-break-spaces pt-16 text-lg leading-loose">
-					{article.content}
 				</div>
 			</div>
 		</div>
